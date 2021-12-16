@@ -77,7 +77,79 @@ func ConvertStateToString(state int, languageCode int) (stateString string) {
 		default:
 			stateString = fmt.Sprintf("Unbekannter Zustand %d", state)
 		}
-	} else { //ENGLISH
+	} else if languageCode == 1 { // TURKISH
+		switch state {
+		case ProducingAtFullSpeedState:
+			stateString = "Maschine läuft"
+		case ProducingAtLowerThanFullSpeedState:
+			stateString = "Maschine läuft mit verringerter Geschwindigkeit"
+		case UnknownState:
+			stateString = "Keine Daten"
+		case IdleState:
+			stateString = "Bereit"
+		case OperatorInteractionState:
+			stateString = "Bedienereingriff"
+		case UnspecifiedStopState:
+			stateString = "Unbekannter Stopp"
+		case MicrostopState:
+			stateString = "Mikrostopp"
+		case InletJamState:
+			stateString = "Mangel am Einlauf"
+		case OutletJamState:
+			stateString = "Mangel am Auslauf"
+		case CongestionBypassState:
+			stateString = "Mangel an Hilfsmaterialien"
+		case MissingBottleCapsRinneState:
+			stateString = "Mangel an Kronkorken (Rinne)"
+		case MissingBottleCapsUebergabeState:
+			stateString = "Mangel an Kronkorken (Übergabe)"
+		case MaterialIssueOtherState:
+			stateString = "Sonstige Materialprobleme"
+		case ChangeoverState:
+			stateString = "Rüsten"
+		case ChangeoverPreparationState:
+			stateString = "Vorbereitung"
+		case ChangeoverPostprocessingState:
+			stateString = "Nachbereitung"
+		case CleaningState:
+			stateString = "Reinigen"
+		case EmptyingState:
+			stateString = "Leeren"
+		case SettingUpState:
+			stateString = "Vorbereiten"
+		case OperatorNotAtMachineState:
+			stateString = "Maschinenbediener fehlt"
+		case OperatorBreakState:
+			stateString = "Pause"
+		case NoShiftState:
+			stateString = "Keine Schicht"
+		case NoOrderState:
+			stateString = "Kein Auftrag"
+		case EquipmentFailureState:
+			stateString = "Maschinenstörung"
+		case EquipmentFailureStateWelder:
+			stateString = "Maschinenstörung Schweißer"
+		case EquipmentFailureStateExpender:
+			stateString = "Maschinenstörung Spreizer"
+		case EquipmentFailureStatePalletizer:
+			stateString = "Maschinenstörung Palettierer"
+		case EquipmentFailureStateUnderbody:
+			stateString = "Maschinenstörung Unterboden"
+		case EquipmentFailureStateTopcover:
+			stateString = "Maschinenstörung Oberboden"
+		case ExternalFailureState:
+			stateString = "Externe Störung"
+		case ExternalInterferenceState:
+			stateString = "Sonstige externe Störung"
+		case CraneNotAvailableState:
+			stateString = "Kran nicht verfügbar"
+		case PreventiveMaintenanceStop:
+			stateString = "Wartung"
+		case TechnicalOtherStop:
+			stateString = "Sonstige technische Störung"
+		default:
+			stateString = fmt.Sprintf("Unbekannter Zustand %d", state)
+		} else { //ENGLISH
 		switch state {
 		case ProducingAtFullSpeedState:
 			stateString = "Producing"
