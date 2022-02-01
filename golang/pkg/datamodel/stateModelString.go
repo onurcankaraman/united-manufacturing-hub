@@ -80,55 +80,55 @@ func ConvertStateToString(state int, languageCode int) (stateString string) {
 	} else if languageCode == 1 { // TURKISH
 		switch state {
 		case ProducingAtFullSpeedState:
-			stateString = "Maschine läuft"
+			stateString = "Makine Çalışıyor"
 		case ProducingAtLowerThanFullSpeedState:
-			stateString = "Maschine läuft mit verringerter Geschwindigkeit"
+			stateString = "Makine Düşük Hızda Çalışıyor"
 		case UnknownState:
-			stateString = "Keine Daten"
+			stateString = "Veri Yok"
 		case IdleState:
-			stateString = "Bereit"
+			stateString = "Hazır"
 		case OperatorInteractionState:
-			stateString = "Bedienereingriff"
+			stateString = "Operatör Müdahalesi"
 		case UnspecifiedStopState:
-			stateString = "Unbekannter Stopp"
+			stateString = "Bilinmeyen Duruş"
 		case MicrostopState:
-			stateString = "Mikrostopp"
+			stateString = "Mikro Duruş"
 		case InletJamState:
 			stateString = "Mangel am Einlauf"
 		case OutletJamState:
 			stateString = "Mangel am Auslauf"
 		case CongestionBypassState:
-			stateString = "Mangel an Hilfsmaterialien"
+			stateString = "Yardımcı Malzeme Eksikliği"
 		case MissingBottleCapsRinneState:
-			stateString = "Mangel an Kronkorken (Rinne)"
+			stateString = "Şişe Kapalarının Yetersizliği(Oluk)"
 		case MissingBottleCapsUebergabeState:
-			stateString = "Mangel an Kronkorken (Übergabe)"
+			stateString = "Şişe Kapakları Mevcut Değil"
 		case MaterialIssueOtherState:
-			stateString = "Sonstige Materialprobleme"
+			stateString = "Diğer Malzeme Sorunları"
 		case ChangeoverState:
-			stateString = "Rüsten"
+			stateString = "Model Değişimi"
 		case ChangeoverPreparationState:
-			stateString = "Vorbereitung"
+			stateString = "Model Değişimi Hazırlık Durumu"
 		case ChangeoverPostprocessingState:
-			stateString = "Nachbereitung"
+			stateString = "Model Değişimi Son Kontrol"
 		case CleaningState:
-			stateString = "Reinigen"
+			stateString = "Temizlik"
 		case EmptyingState:
-			stateString = "Leeren"
+			stateString = "Boşaltma"
 		case SettingUpState:
-			stateString = "Vorbereiten"
+			stateString = "Hazırlık Aşaması"
 		case OperatorNotAtMachineState:
-			stateString = "Maschinenbediener fehlt"
+			stateString = "Operatör Makine Başında Değil"
 		case OperatorBreakState:
-			stateString = "Pause"
+			stateString = "Mola"
 		case NoShiftState:
-			stateString = "Keine Schicht"
+			stateString = "Vardiya Yok"
 		case NoOrderState:
-			stateString = "Kein Auftrag"
+			stateString = "Sipariş Yok"
 		case EquipmentFailureState:
-			stateString = "Maschinenstörung"
+			stateString = "Makine Arızası"
 		case EquipmentFailureStateWelder:
-			stateString = "Maschinenstörung Schweißer"
+			stateString = "Makine Arızası - Kaynak"
 		case EquipmentFailureStateExpender:
 			stateString = "Maschinenstörung Spreizer"
 		case EquipmentFailureStatePalletizer:
@@ -138,15 +138,15 @@ func ConvertStateToString(state int, languageCode int) (stateString string) {
 		case EquipmentFailureStateTopcover:
 			stateString = "Maschinenstörung Oberboden"
 		case ExternalFailureState:
-			stateString = "Externe Störung"
+			stateString = "Dış Arıza"
 		case ExternalInterferenceState:
-			stateString = "Sonstige externe Störung"
+			stateString = "Dış Müdahale"
 		case CraneNotAvailableState:
 			stateString = "Kran nicht verfügbar"
 		case PreventiveMaintenanceStop:
-			stateString = "Wartung"
+			stateString = "Bakım Yapılıyor"
 		case TechnicalOtherStop:
-			stateString = "Sonstige technische Störung"
+			stateString = "Diğer Teknik Arızalar"
 		default:
 			stateString = fmt.Sprintf("Unbekannter Zustand %d", state)
 		} else { //ENGLISH
